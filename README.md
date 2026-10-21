@@ -1,6 +1,6 @@
 # Vending Machine
 
-A small full-stack vending machine built for the Next Dynamics technical task.
+A small full-stack vending machine technical task.
 
 There are two pages and no login:
 

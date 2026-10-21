@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Admin · Vending Machine{% endblock %}
+{% block nav_admin %}active{% endblock %}
+{% block content %}
+<section>
+  <h1>Machine admin</h1>
+  <p class="muted">No login required for this task. Update products, restock items, and refill the coin hopper.</p>
+  <div id="status" class="status" hidden></div>
+</section>
+<section class="split">
+  <div>
+    <h2>Products</h2>
+    <div id="products"></div>
+    <form id="create-product" class="card form">
+      <h3>Add product</h3>
+      <label>Name <input name="name" required placeholder="Sparkling water"></label>
+      <label>Price <input name="price" required placeholder="1.50"></label>
+      <label>Initial stock <input name="stock" type="number" min="0" value="0"></label>
+      <button type="submit">Create</button>
+    </form>
+  </div>
+  <div>
+    <h2>Coin hopper</h2>
+    <p class="muted">These are coins already inside the machine, used to pay change.</p>
+    <div id="coins"></div>
+    <div class="card">
+      <h3>Customer session</h3>
+      <p id="session">No coins inserted.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/api.js' %}"></script>
+<script src="{% static 'js/admin.js' %}"></script>
+{% endblock %}

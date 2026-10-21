@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Customer · Vending Machine{% endblock %}
+{% block nav_customer %}active{% endblock %}
+{% block content %}
+<section class="layout">
+  <div>
+    <h1>Select a product</h1>
+    <p class="muted">Insert coins, then pick an item. Cancel any time for a full refund of the coins you put in.</p>
+    <div id="products" class="grid"></div>
+  </div>
+  <aside class="panel">
+    <h2>Inserted</h2>
+    <p class="balance" id="balance">0.00</p>
+    <div id="inserted-coins" class="coin-list"></div>
+    <h3>Insert a coin</h3>
+    <div id="coin-buttons" class="coins"></div>
+    <button id="cancel" class="ghost" type="button">Cancel / refund</button>
+    <div id="status" class="status" hidden></div>
+  </aside>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/api.js' %}"></script>
+<script src="{% static 'js/customer.js' %}"></script>
+{% endblock %}
